@@ -7,8 +7,12 @@ ext {
     coroutinesAndroidVersion = "1.1.1"
     coroutinesCoreVersion = "1.1.1"
     androidx_viewmodel = "2.2.0"
+    retrofit = "2.0.0"
+    retrofitGson = "2.0.0"
 
     generalDependencies = [
+            retrofit          : "com.squareup.retrofit2:retrofit:${retrofit}",
+            retrofitGson       : "com.squareup.retrofit2:converter-gson:${retrofitGson}",
             coroutinesAndroid : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesAndroidVersion",
             androidx_viewmodel: "androidx.lifecycle:lifecycle-viewmodel-ktx:${androidx_viewmodel}",
             coroutinesCore    : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesCoreVersion",

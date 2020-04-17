@@ -28,4 +28,9 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(path: ':domain')
+
+    def lib = rootProject.ext.generalDependencies
+
+    implementation lib.retrofit
+    implementation lib.retrofitGson
 }

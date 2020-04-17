@@ -1,17 +1,13 @@
 package com.example.domain.usecases.implementation
 
-import com.example.domain.utils.ZERO
-import com.example.domain.entities.City
+import com.example.domain.servicies.WeatherCityService
 import com.example.domain.usecases.GetCityByIdUseCase
+import org.koin.core.KoinComponent
+import org.koin.core.inject
 
-class GetCityByIdUseCaseImpl: GetCityByIdUseCase {
+class GetCityByIdUseCaseImpl() : GetCityByIdUseCase, KoinComponent {
 
-    override fun invoke(listOfCity: MutableList<City>, name: String): Int {
-        for (i in ZERO until listOfCity.size) {
-            if (listOfCity[i].name.equals(name)) {
-                return listOfCity[i].id
-            }
-        }
-        return ZERO
-    }
+    private val weatherCityService: WeatherCityService by inject()
+
+    override fun invoke(id: Int) = weatherCityService.getCityById(id)
 }
